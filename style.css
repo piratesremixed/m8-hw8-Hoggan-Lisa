@@ -33,19 +33,46 @@ header {
   background-color: var(--primary-color);
   padding: 48px 0;
   border-bottom: var(--secondary-color) 6px solid;
+  animation: hover;
 }
 
 /* header link animations! */
+
 header a {
   font-size: 1.5rem;
   color: var(--off-white);
+  animation: hover 2s alternate;
+  animation-delay: 2s;
 }
+@keyframes hover {
+  to{
+    transform: translateY(-8px)
+  }
+  to{
+    padding: 10px 10px
+  }
+  50%{
+    background-color: green;
+  }
+
+}
+a:hover{
+  background-color: green;
+  padding: 10px 10px;
+}
+
 /* end header link animations */
 
 /* article link transitions */
 main a {
   color: var(--danger-color);
+  transition: 300ms;
 }
+main a > a:hover{
+  padding: 10px 10px;
+  background-color: green;
+}
+
 /* end article link transitions */
 
 main > article, nav{
@@ -100,7 +127,14 @@ section.hero > button {
   border-radius: 12px;
   text-transform: uppercase;
   cursor: pointer;
+  transition: 400ms;
 }
+/*button transition*/
+section.hero > button:hover{
+  background-color: green;
+  transform: translateY(-6px);
+}
+/*It took me a bit of time to figure out the correct code to select the button.*/
 
 main article {
   padding: 48px 96px;
@@ -127,3 +161,4 @@ footer {
   padding: 24px 0;
   color: var(--off-white);
 }
+/*I think the biggest challenge for me was figuring out labeling before the {}. I had a lot of trial and error which took a long time.*/
